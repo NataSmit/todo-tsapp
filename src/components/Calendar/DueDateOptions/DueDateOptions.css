@@ -1,0 +1,13 @@
+.optionsContainer {
+  width: 200px;
+
+}
+
+.option {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.option:hover {
+  background-color: lightblue;
+}

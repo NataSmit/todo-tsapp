@@ -1,0 +1,8 @@
+.dueDateBox {
+  border: 1px solid grey;
+  padding: 10px;
+  border-radius: 3px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}

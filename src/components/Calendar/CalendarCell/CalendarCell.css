@@ -1,0 +1,12 @@
+.calendarCell {
+  border: 1px solid grey;
+  cursor: pointer;
+}
+
+.calendarCellCurrentDay {
+ background-color: cadetblue;
+}
+
+.calendarCellSelected {
+  border: 2px solid blue
+ }

@@ -1,0 +1,9 @@
+.infoBoxFlexContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  .infoBoxBody {
+    flex: 1 1 auto;
+  }
+}

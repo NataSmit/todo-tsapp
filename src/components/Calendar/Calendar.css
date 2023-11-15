@@ -1,0 +1,37 @@
+.calendar{
+  width: 250px;
+  
+  border: 1px solid grey;
+  padding: 10px;
+}
+
+.calendarVisible {
+  display: block
+}
+
+.calendarHidden {
+  display: none;
+}
+
+
+.calendarHeader {
+  display: flex;
+  justify-content: space-around;
+}
+
+.calendarBody {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+
+.calendarWeekNames {
+  display: flex;
+  justify-content: space-between;
+}
+
+.calendarNavigationButton {
+  cursor: pointer;
+}
+
+

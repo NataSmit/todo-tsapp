@@ -1,0 +1,11 @@
+.todoControlPanel {
+  display: none;
+  flex-basis: 35%;
+  background-color: aliceblue;
+
+  &_visible {
+    display: block;
+  }
+}
+
+

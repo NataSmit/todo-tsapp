@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import Root from './components/Root/Root';
 import Container from './components/Container/Container';
 import TodoDashBoard from './components/TodoDashboard/TodoDashBoard';

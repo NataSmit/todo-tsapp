@@ -1,11 +1,24 @@
 .todoControlPanel {
   display: none;
-  flex-basis: 35%;
+  flex-basis: 40%;
   background-color: aliceblue;
 
   &_visible {
     display: block;
+
+    @media(max-width: 600px) {
+      position: absolute;
+      background-color: white;
+      width: 100%;
+    }
   }
+
+  @media(max-width: 1000px) {
+    //flex-basis: 50%;
+  }
+
 }
+
+
 
 

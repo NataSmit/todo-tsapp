@@ -5,4 +5,5 @@
   display: flex;
   justify-content: space-between;
   cursor: pointer;
+  max-width: 275px;
 }

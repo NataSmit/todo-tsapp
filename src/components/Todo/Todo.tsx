@@ -1,6 +1,6 @@
-import React from "react";
+import React, { MouseEvent } from "react";
 import "./Todo.css";
-import { useDispatch } from "react-redux";
+import { useAppDispatch } from "../../store/hooks";
 import {
   handleTodoInfoBoxClick,
   toggleComplete,
@@ -9,19 +9,20 @@ import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import { Checkbox, ListItemIcon, Typography } from "@mui/material";
 import { getDueDateValue } from "../../utils/utils";
+import { TodoProps, Todo } from '../../types/types'
 
-export default function Todo({ todo }) {
-  const dispatch = useDispatch();
+export default function TodoItem({ todo }: TodoProps) {
+  const dispatch = useAppDispatch();
 
-  function toggleTodoComplete(id) {
+  const toggleTodoComplete = (id: number) => {
     dispatch(toggleComplete({ id }));
   }
 
-  function handleCheckboxClick(e) {
+  const handleCheckboxClick = (e: MouseEvent<HTMLDivElement>) => {
     e.stopPropagation();
   }
 
-  function handleTodoClick(e, todo) {
+  const handleTodoClick = (e: MouseEvent<HTMLLIElement>, todo: Todo) => {
     dispatch(handleTodoInfoBoxClick(todo));
   }
 
@@ -34,7 +35,7 @@ export default function Todo({ todo }) {
           mb: 1,
           backgroundColor: "white",
         }}
-        onClick={(e, id) => handleTodoClick(e, todo)} ///// todo.id => todo
+        onClick={(e) => handleTodoClick(e, todo)} ///// todo.id => todo
       >
         <ListItemIcon onClick={handleCheckboxClick}>
           <Checkbox

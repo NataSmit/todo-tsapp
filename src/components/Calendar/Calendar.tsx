@@ -5,9 +5,9 @@ import React, { useEffect, useState } from "react";
 import classNames from "classnames";
 import { weekNames } from "../../utils/constants/calendarConstants";
 import CalendarCell from "./CalendarCell/CalendarCell";
-import { useDispatch } from "react-redux";
 import { addDueDate } from "../../store/slices/TaskSlice";
 import {CalendarProps} from '../../types/types'
+import { useAppDispatch } from "../../store/hooks";
 
 export default function Calendar({
   currentDate,
@@ -17,7 +17,7 @@ export default function Calendar({
   dueDate,
   setCalendarVisible,
 }: CalendarProps) {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const [dates, setDates] = useState<number[]>();
   const calendarClass = classNames({
     calendarVisible: calendarVisible,

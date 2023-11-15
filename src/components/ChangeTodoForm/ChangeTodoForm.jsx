@@ -2,18 +2,18 @@ import { FormControl, InputAdornment } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import Checkbox from "@mui/material/Checkbox";
 import OutlinedInput from "@mui/material/OutlinedInput";
-import { useDispatch } from "react-redux";
+import { useAppDispatch } from "../../store/hooks";
 import { changeTodo, toggleComplete } from "../../store/slices/TaskSlice";
 
 export default function ChangeTodoForm({ title, completed, comment, id, dueDate }) {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const [todo, setTodo] = useState(title);
 
   useEffect(() => {
     setTodo(title);
   }, [title]);
 
-  function handleFormSubmit(e) {
+  const handleFormSubmit = (e) => {
     e.preventDefault();
     dispatch(
       changeTodo({
@@ -26,15 +26,15 @@ export default function ChangeTodoForm({ title, completed, comment, id, dueDate 
     );
   }
 
-  function handleInputChange(e) {
+  const handleInputChange = (e) => {
     setTodo(e.target.value);
   }
 
-  function handleToggle(event) {
+  const handleToggle = (event) => {
     dispatch(toggleComplete({ id }));
   }
 
-  function onBlur() {
+  const onBlur = () => {
     dispatch(
       changeTodo({
         title: todo,

@@ -5,13 +5,13 @@ import "./DueDateForm.css";
 import DueDateOptions from "../Calendar/DueDateOptions/DueDateOptions";
 import { Box, IconButton } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
-import { useDispatch } from "react-redux";
+import { useAppDispatch } from "../../store/hooks";
 import { addDueDate, deleteDueDate } from "../../store/slices/TaskSlice";
 import { getDueDateValue } from "../../utils/utils";
 import {DueDateFormProps} from '../../types/types'
 
 export default function DueDateForm({ id, dueDate }: DueDateFormProps) {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const [calendarVisible, setCalendarVisible] = useState(false);
   const [currentDate, setCurrentDate] = useState<DateTime>(DateTime.now());
   const [dueDateOptionsVisible, setDueDateOptionsVisible] = useState(false);

@@ -4,7 +4,12 @@
   min-height: 100vh;
   padding: 5px 0;
   background-color: beige;
-  width: 100%;
+  //width: 100%;
   padding: 20px;
   box-sizing: border-box;
+  flex: 1 1 auto;
+
+  @media(max-width: 1000px) {
+    //flex: 0 0 50%;
+  }
 }

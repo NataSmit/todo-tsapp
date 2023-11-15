@@ -28,7 +28,7 @@ export const getDates = (date: DateTime): number[] => {
   }
 
   return arr;
-}
+};
 
 export const getMonthName = (index: number) => {
   return months.filter((item, id) => id === index)[0];
@@ -43,4 +43,4 @@ export const getDueDateValue = (dueDate: string) => {
       month: "short",
     })
   );
-}
+};

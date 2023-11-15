@@ -1,17 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { getTodosFromLS, saveTodosToLS } from "../../utils/utils";
-import { Todo } from '../../types/types'
-
-interface TodoState {
-  todos: Todo[] | null,
-  selectedTodo: Todo | null
-}
+import { TodoState } from "../../types/types";
 
 const initialState: TodoState = {
   todos: null,
-  selectedTodo: null
-}
-
+  selectedTodo: null,
+};
 
 export const todoSlice = createSlice({
   name: "todos",
@@ -29,7 +23,9 @@ export const todoSlice = createSlice({
       state.todos && saveTodosToLS(state.todos);
     },
     deleteTodo: (state, action) => {
-      state.todos = state.todos && state.todos.filter((todo) => todo.id !== action.payload.id);
+      state.todos =
+        state.todos &&
+        state.todos.filter((todo) => todo.id !== action.payload.id);
       state.selectedTodo = null;
       state.todos && saveTodosToLS(state.todos);
     },
@@ -38,32 +34,35 @@ export const todoSlice = createSlice({
         state.selectedTodo.completed = !state.selectedTodo.completed;
       }
 
-      state.todos = state.todos && state.todos.map((todo) => {
-        if (todo.id === action.payload.id) {
-          return { ...todo, completed: !todo.completed };
-        } else return todo;
-      });
+      state.todos =
+        state.todos &&
+        state.todos.map((todo) => {
+          if (todo.id === action.payload.id) {
+            return { ...todo, completed: !todo.completed };
+          } else return todo;
+        });
 
       state.todos && saveTodosToLS(state.todos);
     },
     handleTodoInfoBoxClick: (state, action) => {
       if (state.selectedTodo && action.payload.id === state.selectedTodo.id) {
-        state.selectedTodo = null
+        state.selectedTodo = null;
       } else {
-        state.selectedTodo = action.payload
+        state.selectedTodo = action.payload;
       }
-      
     },
     changeTodo: (state, action) => {
-      state.todos = state.todos && state.todos.map((todo) => {
-        if (todo.id === action.payload.id) {
-          return {
-            ...todo,
-            title: action.payload.title,
-            completed: action.payload.completed,
-          };
-        } else return todo;
-      });
+      state.todos =
+        state.todos &&
+        state.todos.map((todo) => {
+          if (todo.id === action.payload.id) {
+            return {
+              ...todo,
+              title: action.payload.title,
+              completed: action.payload.completed,
+            };
+          } else return todo;
+        });
       state.selectedTodo = state.selectedTodo && {
         ...state.selectedTodo,
         title: action.payload.title,
@@ -78,11 +77,13 @@ export const todoSlice = createSlice({
       state.selectedTodo = null;
     },
     addComment: (state, action) => {
-      state.todos = state.todos && state.todos.map((todo) => {
-        if (todo.id === action.payload.id) {
-          return { ...todo, comment: action.payload.comment };
-        } else return todo;
-      });
+      state.todos =
+        state.todos &&
+        state.todos.map((todo) => {
+          if (todo.id === action.payload.id) {
+            return { ...todo, comment: action.payload.comment };
+          } else return todo;
+        });
       state.selectedTodo = state.selectedTodo && {
         ...state.selectedTodo,
         comment: action.payload.comment,
@@ -90,11 +91,13 @@ export const todoSlice = createSlice({
       state.todos && saveTodosToLS(state.todos);
     },
     addDueDate: (state, action) => {
-      state.todos = state.todos && state.todos.map((todo) => {
-        if (todo.id === action.payload.id) {
-          return { ...todo, dueDate: action.payload.dueDate };
-        } else return todo;
-      });
+      state.todos =
+        state.todos &&
+        state.todos.map((todo) => {
+          if (todo.id === action.payload.id) {
+            return { ...todo, dueDate: action.payload.dueDate };
+          } else return todo;
+        });
       state.selectedTodo = state.selectedTodo && {
         ...state.selectedTodo,
         dueDate: action.payload.dueDate,
@@ -102,12 +105,17 @@ export const todoSlice = createSlice({
       state.todos && saveTodosToLS(state.todos);
     },
     deleteDueDate: (state, action) => {
-      state.todos = state.todos && state.todos.map((todo) => {
-        if (todo.id === action.payload.id) {
-          return { ...todo, dueDate: "" };
-        } else return todo;
-      });
-      state.selectedTodo = state.selectedTodo && { ...state.selectedTodo, dueDate: "" };
+      state.todos =
+        state.todos &&
+        state.todos.map((todo) => {
+          if (todo.id === action.payload.id) {
+            return { ...todo, dueDate: "" };
+          } else return todo;
+        });
+      state.selectedTodo = state.selectedTodo && {
+        ...state.selectedTodo,
+        dueDate: "",
+      };
       state.todos && saveTodosToLS(state.todos);
     },
   },

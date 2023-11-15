@@ -8,6 +8,12 @@ export type Todo = {
   dueDate: string,
 }
 
+
+export type TodoState = {
+  todos: Todo[] | null,
+  selectedTodo: Todo | null
+}
+
 export type TodoInfoBoxProps = {
   selectedTodo: Todo | null
 }
@@ -36,4 +42,12 @@ export type CalendarCellProps = {
   isCurrentDate?: boolean,
   handleCalendarCellClick?: (v: number) => void,
   selected?: boolean
+}
+
+export type ContainerProps = {
+  children: React.ReactNode
+}
+
+export type TodoProps = {
+  todo: Todo
 }

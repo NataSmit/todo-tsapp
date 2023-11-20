@@ -51,3 +51,19 @@ export type ContainerProps = {
 export type TodoProps = {
   todo: Todo
 }
+
+export type DueDateOptionsProps = {
+  dueDateOptionsVisible: boolean,
+  handleCalendarVisibility: () => void,
+  setDueDateToday: () => void,
+  setDueDateTomorrow: () => void,
+  setDueDateNextWeek: () => void
+}
+
+export type ChangeTodoFormProps = {
+  title: string, 
+  completed: boolean, 
+  comment: string, 
+  id: number, 
+  dueDate: string
+}

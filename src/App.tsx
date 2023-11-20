@@ -1,21 +1,21 @@
-import React from 'react';
-import Root from './components/Root/Root';
-import Container from './components/Container/Container';
-import TodoDashBoard from './components/TodoDashboard/TodoDashBoard';
-import TodoControlPanel from './components/TodoControlPanel/TodoControlPanel';
+import React from 'react'
+import Root from './components/Root/Root'
+import Container from './components/Container/Container'
+import TodoDashBoard from './components/TodoDashboard/TodoDashBoard'
+import TodoControlPanel from './components/TodoControlPanel/TodoControlPanel'
 
-function App() {
-  return (
-    <div className="App">
-      <Root>
-        <Container>
-          <TodoDashBoard />
-          <TodoControlPanel />
-        </Container>
-      </Root>
+function App () {
+    return (
+        <div className="App">
+            <Root>
+                <Container>
+                    <TodoDashBoard />
+                    <TodoControlPanel />
+                </Container>
+            </Root>
       
-    </div>
-  );
+        </div>
+    )
 }
 
-export default App;
+export default App

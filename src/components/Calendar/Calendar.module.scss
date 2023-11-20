@@ -1,18 +1,13 @@
 .calendar{
   width: 250px;
-  
   border: 1px solid grey;
   padding: 10px;
+  display: none;
 }
 
 .calendarVisible {
   display: block
 }
-
-.calendarHidden {
-  display: none;
-}
-
 
 .calendarHeader {
   display: flex;

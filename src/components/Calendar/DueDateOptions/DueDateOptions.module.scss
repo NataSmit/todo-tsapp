@@ -1,0 +1,21 @@
+.optionsContainer {
+  width: 200px;
+  background-Color: white;
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 30px;
+}
+
+.optionsContainer_visible {
+  display: block;
+}
+
+.option {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.option:hover {
+  background-color: lightblue;
+}

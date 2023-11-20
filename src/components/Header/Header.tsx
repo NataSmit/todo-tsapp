@@ -11,6 +11,5 @@ export default function Header () {
                 </Typography>
             </Toolbar>
         </AppBar>
-        
     )
 }

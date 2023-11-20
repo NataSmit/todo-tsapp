@@ -20,7 +20,6 @@
     "rules": {
         "semi": ["error", "never", { "beforeStatementContinuationChars": "never"}],
         "indent": ["error", 4],
-        "space-before-function-paren": ["error", "always"],
         "max-len":["warn",{"code":140}]
     }
 }

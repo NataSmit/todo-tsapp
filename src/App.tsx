@@ -1,19 +1,16 @@
 import React from 'react'
 import Root from './components/Root/Root'
-import Container from './components/Container/Container'
-import TodoDashBoard from './components/TodoDashboard/TodoDashBoard'
-import TodoControlPanel from './components/TodoControlPanel/TodoControlPanel'
+import Layout from './components/Layout/Layout'
+import Main from './pages/Main'
 
 function App () {
     return (
         <div className="App">
             <Root>
-                <Container>
-                    <TodoDashBoard />
-                    <TodoControlPanel />
-                </Container>
+                <Layout>
+                    <Main />
+                </Layout>  
             </Root>
-      
         </div>
     )
 }

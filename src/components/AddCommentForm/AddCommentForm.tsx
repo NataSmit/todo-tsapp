@@ -32,6 +32,7 @@ export default function AddCommentForm ({ comment, id }: AddCommentFormProps) {
             onSubmit={(e) => handleCommentSubmit(e, id, commentValue)}
         >
             <TextField
+                className={styles.textField}
                 value={commentValue}
                 onChange={handleCommentChange}
                 label="Добавить заметку"

@@ -49,7 +49,7 @@ export default function TodoInfoBox ({ selectedTodo }: TodoInfoBoxProps) {
                     <DueDateForm id={selectedTodo.id} dueDate={selectedTodo.dueDate} />
                 )}
             </Box>
-            <Box>
+            <Box className={styles.deleteBtnContainer} >
                 <IconButton
                     aria-label="delete"
                     color="primary"

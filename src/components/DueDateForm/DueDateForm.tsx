@@ -54,7 +54,7 @@ export default function DueDateForm ({ id, dueDate }: DueDateFormProps) {
     return (
         <>
             <form className={styles.form}>
-                <Box className={styles.container}>
+                <Box className={styles.container}  >
                     <div className={styles.dueDateBox}>
                         <p onClick={handleDueDateOptionsVisibility}>{`${
                             dueDate

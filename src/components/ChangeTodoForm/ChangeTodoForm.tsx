@@ -51,7 +51,7 @@ export default function ChangeTodoForm ({ title, completed, comment, id, dueDate
 
     return (
         <form onSubmit={handleFormSubmit}>
-            <FormControl variant="standard">
+            <FormControl className={styles.formControl} variant="standard">
                 <OutlinedInput
                     id="input-with-icon-adornment"
                     className={inputClass}
